@@ -126,7 +126,18 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
   const [tooltipIndex, setTooltipIndex] = useState(chartData.length - 1);
   const [isAnimating, setIsAnimating] = useState(true);
   const [splitOffset, setSplitOffset] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
   const animationDuration = 1500; // Match this to your animation duration in ms
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   
   // Calculate percentage change for the full chart duration (Start of month/period to now)
@@ -291,6 +302,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
                 animationDuration={animationDuration} 
               />
               <Tooltip
+                trigger={isMobile ? 'click' : 'hover'}
                 content={() => null}
                 cursor={hoveredData ? { stroke: '#2979ff', strokeWidth: 1 } : false} 
               />
