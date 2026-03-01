@@ -1,0 +1,17 @@
+{
+  "name": "Retire AFK",
+  "short_name": "RetireAFK",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#101622",
+  "theme_color": "#101622",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
