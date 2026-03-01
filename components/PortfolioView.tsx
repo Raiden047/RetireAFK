@@ -291,7 +291,6 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
                 animationDuration={animationDuration} 
               />
               <Tooltip
-                trigger='click'
                 content={() => null}
                 cursor={hoveredData ? { stroke: '#2979ff', strokeWidth: 1 } : false} 
               />
