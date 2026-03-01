@@ -134,6 +134,20 @@
       html, body {
         -ms-overflow-style: none;  /* IE and Edge */
         scrollbar-width: none;  /* Firefox */
+        user-select: none;
+        -webkit-user-select: none;
+        oultine: none;
+      }
+      
+      /* Disable tap highlight and selection globally */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      /* Allow selection in inputs */
+      input, textarea {
+        user-select: text;
+        -webkit-user-select: text;
       }
     </style>
   <script type="importmap">

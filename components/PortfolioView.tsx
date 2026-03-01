@@ -210,10 +210,11 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
         </div>
 
         {/* Chart */}
-        <div className="h-48 w-full mb-4 relative touch-none">
+        <div className="h-48 w-full mb-4 relative touch-none select-none outline-none px-1" style={{ WebkitTapHighlightColor: 'transparent' }}>
           <div className="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent z-10 pointer-events-none h-full" />
-          <ResponsiveContainer width="100%" height="100%" style={{ pointerEvents: isAnimating ? 'none' : 'auto' }}>
-            <AreaChart 
+          <ResponsiveContainer width="100%" height="100%" style={{ pointerEvents: isAnimating ? 'none' : 'auto', outline: 'none' }}>
+            <AreaChart
+              style={{outline: 'none'}} 
               data={chartData} 
               margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
               onTouchMove={(mouseEventData: MouseHandlerDataParam) => {
@@ -291,7 +292,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
               />
               <Tooltip
                 content={() => null}
-                cursor={{ stroke: '#2979ff', strokeWidth: 1 }} 
+                cursor={hoveredData ? { stroke: '#2979ff', strokeWidth: 1 } : false} 
               />
             </AreaChart>
           </ResponsiveContainer>
