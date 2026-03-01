@@ -286,7 +286,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
                 stroke="url(#splitStroke)" 
                 strokeWidth={3} 
                 fill="none" 
-                activeDot={{ r: 6, strokeWidth: 2, stroke: '#fff' }}
+                activeDot={hoveredData ? { r: 6, strokeWidth: 2, stroke: '#fff' } : false}
                 isAnimationActive={true}
                 animationDuration={animationDuration} 
               />
