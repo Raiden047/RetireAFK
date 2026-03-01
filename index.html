@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correlation Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://esm.sh/react-loading-skeleton@^3.5.0/dist/skeleton.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0d59f2",
+              secondary: "#0bda5e",
+              "background-light": "#f5f6f8",
+              "background-dark": "#101622",
+              charcoal: "#1b1f27",
+              "charcoal-light": "#252b36",
+              "charcoal-lighter": "#2f3642",
+              danger: "#ef4444",
+              "neon-blue": "#2979ff",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            boxShadow: {
+              neon: "0 0 10px rgba(13, 89, 242, 0.5)",
+              glow: "0 0 20px rgba(13, 89, 242, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #101622; /* Fallback */
+      }
+      
+      /* Skeleton Theme Variables */
+      :root {
+        --skeleton-base: #e5e7eb;      /* gray-200 */
+        --skeleton-highlight: #f3f4f6; /* gray-100 */
+      }
+      .dark {
+        --skeleton-base: #1f2937;      /* gray-800 */
+        --skeleton-highlight: #374151; /* gray-700 */
+      }
+
+      /* Custom Slider Styling */
+      input[type=range] {
+        -webkit-appearance: none;
+        background: transparent;
+      }
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background: #2979ff;
+        cursor: pointer;
+        margin-top: -8px;
+        box-shadow: 0 0 10px rgba(41,121,255,0.6);
+      }
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 4px;
+        cursor: pointer;
+        background: #374151;
+        border-radius: 2px;
+      }
+      
+      /* Toggle Switch */
+      .toggle-checkbox:checked {
+        right: 0;
+        border-color: #2979ff;
+      }
+      .toggle-checkbox:checked + .toggle-label {
+        background-color: #2979ff;
+      }
+      
+      .ios-toggle {
+        position: relative;
+        display: inline-block;
+        width: 44px;
+        height: 24px;
+      }
+      .ios-toggle input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .ios-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #374151;
+        transition: .4s;
+        border-radius: 34px;
+      }
+      .ios-slider:before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      input:checked + .ios-slider {
+        background-color: #2979ff;
+      }
+      input:checked + .ios-slider:before {
+        transform: translateX(20px);
+      }
+      .ios-toggle.danger input:checked + .ios-slider {
+        background-color: #ef4444;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.564.0",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.34.0",
+    "react-loading-skeleton": "https://esm.sh/react-loading-skeleton@^3.5.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
