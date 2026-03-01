@@ -28,7 +28,7 @@ const generateChartData = (target: number): PortfolioChartDataPoint[] => {
     // To go back in time, we subtract the "daily change"
     // The prompt specifies a random increment between -2 and +10 for forward movement
     // So for backward movement: prevBalance = currentBalance - change
-    const dailyChange = Math.random() * (20 - (-12)) + (-5); 
+    const dailyChange = Math.random() * (35 - (-25)) + (-2); 
     currentBalance -= dailyChange;
   }
 
@@ -38,7 +38,7 @@ const generateChartData = (target: number): PortfolioChartDataPoint[] => {
 const App: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [currentView, setCurrentView] = useState<ViewState>(ViewState.PORTFOLIO);
-  const [balance, setBalance] = useState(509.81);
+  const [balance, setBalance] = useState(1053.81);
 
   // Simulate initial loading
   useEffect(() => {
