@@ -267,6 +267,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
                 fill="url(#fillBlue)" 
                 fillOpacity={1}
                 clipPath="url(#leftClip)"
+                dot={false} 
                 isAnimationActive={isAnimating}
                 animationDuration={animationDuration} 
               />
@@ -277,6 +278,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
                 fill="url(#fillGrey)" 
                 fillOpacity={1}
                 clipPath="url(#rightClip)"
+                dot={false} 
                 isAnimationActive={isAnimating}
                 animationDuration={animationDuration} 
               />
