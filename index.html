@@ -126,6 +126,15 @@
       .ios-toggle.danger input:checked + .ios-slider {
         background-color: #ef4444;
       }
+      
+      /* Hide scrollbar globally */
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      html, body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
     </style>
   <script type="importmap">
 {

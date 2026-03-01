@@ -210,7 +210,7 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
         </div>
 
         {/* Chart */}
-        <div className="h-48 w-full mb-4 relative">
+        <div className="h-48 w-full mb-4 relative touch-none">
           <div className="absolute inset-0 bg-gradient-to-t from-background-light dark:from-background-dark via-transparent to-transparent z-10 pointer-events-none h-full" />
           <ResponsiveContainer width="100%" height="100%" style={{ pointerEvents: isAnimating ? 'none' : 'auto' }}>
             <AreaChart 
