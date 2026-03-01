@@ -216,6 +216,17 @@ const PortfolioView: React.FC<PortfolioViewProps> = ({ onNavigateDetails, balanc
             <AreaChart 
               data={chartData} 
               margin={{ top: 0, right: 0, left: 0, bottom: 0 }}
+              onTouchMove={(mouseEventData: MouseHandlerDataParam) => {
+                setHoveredData(chartData[mouseEventData.activeIndex]);
+                if (mouseEventData.activeTooltipIndex !== undefined && mouseEventData.activeTooltipIndex !== null && chartData.length > 1) {
+                  const offset = parseInt(mouseEventData.activeTooltipIndex.toString()) / (chartData.length - 1);
+                  setSplitOffset(offset);
+                }
+              }}
+              onTouchEnd={() => {
+                setHoveredData(null);
+                setSplitOffset(1);
+              }}
               onMouseMove={(mouseEventData: MouseHandlerDataParam) => {
                 setHoveredData(chartData[mouseEventData.activeIndex]);
                 if (mouseEventData.activeTooltipIndex !== undefined && mouseEventData.activeTooltipIndex !== null && chartData.length > 1) {
